@@ -46,7 +46,7 @@ function App() {
       <header className="App-header">
         <Picture/>
         <img src={logo} className="App-logo" alt="logo" />
-        
+        <script type="module" src="index.js"></script>
         
         <a
           className="App-link"
