@@ -1,11 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 
+function RandomButton() {
+  return (
+    <>
+    <h3> CLICK HERE FOR A RANDOM PHOTO</h3>
+    <button>Random</button>
+    </>
+  );
+}
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        
         
         <a
           className="App-link"
@@ -13,11 +22,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          CLICK HERE FOR A RANDOM PHOTO
+        
         </a>
+        <RandomButton/>
       </header>
     </div>
   );
 }
+
 
 export default App;
