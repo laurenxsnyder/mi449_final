@@ -3,6 +3,29 @@ import { supabase } from './supabaseClient';
 import logo from './logo.svg';
 import './App.css';
 
+function Pictures() {
+  const [myPictures, setMyPictures] = useState([]);
+  async function getPictures() {
+    let { data: pictures, error } = await supabase
+      .from('pictures')
+      .select('*')
+    setMyPictures(pictures);
+  }
+  getPictures();
+  return (
+    <table>
+      {
+        myPictures.map(b=> {
+          <tr>
+            <td>{b.picture}</td>
+            <td>{b.title}</td>
+          </tr>
+        })
+      }
+    </table>
+  );
+}
+
 function RandomButton() {
   const [count, setCount] = useState(0);
   function randomPicture () {
