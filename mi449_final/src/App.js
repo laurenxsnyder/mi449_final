@@ -1,12 +1,17 @@
+import { useState } from 'react' ;
 import { supabase } from './supabaseClient';
 import logo from './logo.svg';
 import './App.css';
 
 function RandomButton() {
+  const [count, setCount] = useState(0);
+  function randomPicture () {
+    setCount (count +1);
+  }
   return (
     <>
     <h3> CLICK HERE FOR A RANDOM PHOTO</h3>
-    <button>Random</button>
+    <button onClick={randomPicture}>Random {count}</button>
     </>
   );
 }
